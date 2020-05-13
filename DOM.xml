@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+public class XmlGenerator{
+
+        public static void main(String []args){
+
+        DocumnetBuilder f =DocumnetBuilder.newInstance();
+        DocumnetBuilder b =null;
+
+try{
+        b f.newDocumnetBuilder();
+        }
+catch(ParserConfigurationException e){
+
+        e.printStackTrace();
+        }
+
+        }
+        }
