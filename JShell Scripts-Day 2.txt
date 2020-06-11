@@ -1,0 +1,203 @@
+
+jshell> System.out.println("hello world");System.out.println("Hello world");
+hello world
+Hello world
+
+jshell> void printHelloWorld(){
+   ...> for(int i=0;i<=10;i++){
+   ...> System.out.println("hello world");}
+   ...> }
+|  created method printHelloWorld()
+
+jshell> printHelloWorld()
+hello world
+hello world
+hello world
+hello world
+hello world
+hello world
+hello world
+hello world
+hello world
+hello world
+hello world
+
+jshell> void printStatements(){
+   ...> System.out.println("i've created my first variable");
+   ...> System.out.println("i've created my first method");
+   ...> System.out.println("i've created my first loop");
+   ...> System.out.println("i've created my first java");
+   ...> }
+|  created method printStatements()
+
+jshell>  printStatements()
+i've created my first variable
+i've created my first method
+i've created my first loop
+i've created my first java
+
+jshell> void sayHelloWorld(int noOfTimes){
+   ...> }
+|  created method sayHelloWorld(int)
+
+
+jshell>  sayHelloWorld(2)
+
+
+
+jshell> void sayHelloWorld(int noOfTimes){
+   ...> System.out.println(noOfTimes);}
+|  modified method sayHelloWorld(int)
+
+jshell> sayHelloWorld(3)
+3
+
+jshell> void multiplicationTable(int times){
+   ...> for(int i =0;i<=times;i++){
+   ...> System.out.println("5 *"+i+" ="+(5*i));
+   ...> }
+   ...> }
+|  created method multiplicationTable(int)
+
+jshell> multiplicationTable(6)
+5 *0 =0
+5 *1 =5
+5 *2 =10
+5 *3 =15
+5 *4 =20
+5 *5 =25
+5 *6 =30
+
+jshell> multiplicationTable(12)
+5 *0 =0
+5 *1 =5
+5 *2 =10
+5 *3 =15
+5 *4 =20
+5 *5 =25
+5 *6 =30
+5 *7 =35
+5 *8 =40
+5 *9 =45
+5 *10 =50
+5 *11 =55
+5 *12 =60
+
+jshell> void multiplicationTable(int number){
+   ...> for(int i =0 ; i<=12;i++){
+   ...> System.out.println(number +"*"+ " i" +" ="+(number*i));
+   ...> }
+   ...> }
+|  modified method multiplicationTable(int)
+
+jshell> multiplicationTable(5)
+5* i =0
+5* i =5
+5* i =10
+5* i =15
+5* i =20
+5* i =25
+5* i =30
+5* i =35
+5* i =40
+5* i =45
+5* i =50
+5* i =55
+5* i =60
+
+jshell> void multiplicationTable(int number){
+   ...> for(int i =0 ; i<=12;i++){
+   ...> System.out.println(number +"*"+  i +" ="+(number*i));
+   ...> }
+   ...> }
+|  modified method multiplicationTable(int)
+
+jshell> multiplicationTable(5)
+5*0 =0
+5*1 =5
+5*2 =10
+5*3 =15
+5*4 =20
+5*5 =25
+5*6 =30
+5*7 =35
+5*8 =40
+5*9 =45
+5*10 =50
+5*11 =55
+5*12 =60
+
+jshell>
+
+jshell> void sum(int num1,int num2){
+   ...> System.out.println("Sum of the two numbers :"+num1 +" + "+num2+" ="+(num1+num2));
+   ...> }
+|  modified method sum(int,int)
+
+jshell> sum(10,20)
+Sum of the two numbers :10 + 20 =30
+
+
+jshell> void sum(int num1,int num2){
+   ...> System.out.println("Sum of the two numbers :"+num1 +"  "+num2+" ="+(num1+num2));
+   ...> }
+|  created method sum(int,int)
+
+jshell> sum(10,20)
+Sum of the two numbers :10  20 =30
+
+jshell> void sum(int num1,int num2){
+   ...> System.out.println("Sum of the two numbers :"+num1 +" + "+num2+" ="+(num1+num2));
+   ...> }
+|  modified method sum(int,int)
+
+jshell> sum(10,20)
+Sum of the two numbers :10 + 20 =30
+
+
+jshell> int addTwo(int a ,int b){
+   ...> System.out.println("sum is :"+(a+b));
+   ...> return (a+b);
+   ...> }
+|  created method addTwo(int,int)
+
+jshell> addTwo(10,20)
+sum is :30
+$28 ==> 30
+
+jshell> int sum = addTwo(34,56)
+sum is :90
+sum ==> 90
+
+jshell> sum
+sum ==> 90
+
+jshell> int sumOfThree(int a,int b ,int c)
+   ...> {
+   ...> int sum = a+b+c;
+   ...> return sum;
+   ...> }
+|  created method sumOfThree(int,int,int)
+
+jshell> int threeSum =sumOfThree(1,2,3)
+threeSum ==> 6
+
+
+jshell> calculateAngle(50,60)
+|  attempted to call method calculateAngle(int,int) which cannot be invoked until variable angel is declared
+
+jshell> int calculateAngle(int ang1,int ang2){
+   ...> int sum =ang1+ang2;
+   ...> int angle =180-sum;
+   ...> return angle;
+   ...> }
+|  modified method calculateAngle(int,int)
+
+jshell> calculateAngle(50,60)
+$37 ==> 70
+
+jshell> calculateAngle(40,60)
+$38 ==> 80
+
+
+
