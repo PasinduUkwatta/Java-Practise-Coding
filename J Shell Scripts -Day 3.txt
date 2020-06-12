@@ -1,0 +1,89 @@
+Microsoft Windows [Version 10.0.18362.836]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\Pasindu Thiwanka>jshell
+|  Welcome to JShell -- Version 11.0.6
+|  For an introduction type: /help intro
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell> class Country{
+   ...> }
+|  created class Country
+
+jshell> Country sl = new Country()
+sl ==> Country@5034c75a
+
+jshell> Country ind = new Country()
+ind ==> Country@51081592
+
+jshell> class Planet{
+   ...> }
+|  created class Planet
+
+jshell> Planet mars = new Palnet()
+|  Error:
+|  cannot find symbol
+|    symbol:   class Palnet
+|  Planet mars = new Palnet();
+|                    ^----^
+
+jshell> Planet mars = new Planet()
+mars ==> Planet@735b5592
+
+jshell> Planet earth = new Planet()
+earth ==> Planet@4520ebad
+
+jshell> class Planet{
+   ...> void revolve(){
+   ...> System.out.println("Revolve");}}
+|  replaced class Planet
+|    update replaced variable earth, reset to null
+|    update replaced variable mars, reset to null
+
+jshell> Planet earth = new Planet()
+earth ==> Planet@7c16905e
+
+jshell> Planet mars = new Planet()
+mars ==> Planet@2a2d45ba
+
+jshell> mars.revolve();
+Revolve
+
+jshell> earth.revolve();
+Revolve
+
+jshell> class Country{
+   ...> void comingSoon(){System.out.println("Coming Soon");}
+   ...> }
+|  replaced class Country
+|    update replaced variable sl, reset to null
+|    update replaced variable ind, reset to null
+
+jshell> Country sl = new Country();
+sl ==> Country@1b604f19
+
+jshell> sl.comingSoon()
+Coming Soon
+
+jshell> Country uk = new Country();
+uk ==> Country@457e2f02
+
+jshell> uk.comingSoon()
+Coming Soon
+
+jshell>
+
+
+
+
+
+
+
+
+
+
