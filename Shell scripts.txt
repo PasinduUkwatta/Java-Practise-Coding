@@ -1,0 +1,199 @@
+
+
+jshell> int i =10000000
+i ==> 10000000
+
+
+
+jshell> long e = 1000000000000000000000000l
+|  Error:
+|  integer number too large
+|  long e = 1000000000000000000000000l;
+|           ^
+
+
+
+
+
+
+
+jshell> i=(int) e
+i ==> -1863462913
+
+jshell> int eight = 010
+eight ==> 8
+
+
+jshell> int siteen =0x10
+siteen ==> 16
+
+jshell> int ff =0xff
+ff ==> 255
+
+jshell> int abc =0XABC
+abc ==> 2748
+
+
+
+jshell> byte b = (byte)30
+b ==> 30
+
+jshell> b
+b ==> 30
+
+jshell> int b
+b ==> 0
+
+jshell> b
+b ==> 0
+
+jshell> byte b = (byte)30
+b ==> 30
+
+jshell> int c =b
+c ==> 30
+
+jshell> byte c
+c ==> 0
+
+jshell> int i =10
+i ==> 10
+
+jshell> int j = i++
+j ==> 10
+
+jshell> i
+i ==> 11
+
+jshell> int j =++i
+j ==> 12
+
+jshell> i
+i ==> 12
+
+jshell> j =i--
+j ==> 12
+
+jshell> i
+i ==> 11
+
+jshell> j=--i
+j ==> 10
+
+jshell>
+
+jshell> i
+i ==> 10
+
+jshell> double k =34.5
+k ==> 34.5
+
+
+
+jshell> BigDecimal num1 =new BigDecimal("34.123456789");
+num1 ==> 34.123456789
+
+jshell> BigDecimal num2 =new BigDecimal("34.123456789");
+num2 ==> 34.123456789
+
+
+
+jshell> num1.add(num2);
+$27 ==> 68.246913578
+
+jshell> num1.
+abs(                     add(                     byteValue()              byteValueExact()         compareTo(
+divide(                  divideAndRemainder(      divideToIntegralValue(   doubleValue()            equals(
+floatValue()             getClass()               hashCode()               intValue()               intValueExact()
+longValue()              longValueExact()         max(                     min(                     movePointLeft(
+movePointRight(          multiply(                negate(                  notify()                 notifyAll()
+plus(                    pow(                     precision()              remainder(               round(
+scale()                  scaleByPowerOfTen(       setScale(                shortValue()             shortValueExact()
+signum()                 sqrt(                    stripTrailingZeros()     subtract(                toBigInteger()
+toBigIntegerExact()      toEngineeringString()    toPlainString()          toString()               ulp()
+unscaledValue()          wait(
+
+jshell> num1.s
+scale()                scaleByPowerOfTen(     setScale(              shortValue()           shortValueExact()
+signum()               sqrt(                  stripTrailingZeros()   subtract(
+
+
+
+jshell> BigDecimal num = new BigDecimal("11.5");
+num ==> 11.5
+
+
+
+jshell> BigDecimal num2 = new BigDecimal("23.45678");
+num2 ==> 23.45678
+
+jshell> num.add(num2)
+$31 ==> 34.95678
+
+jshell> int i =10
+i ==> 10
+
+jshell> num.add(new BigDecimal(i));
+$33 ==> 21.5
+
+jshell> num2.multiply(new BigDecimal(i));
+$34 ==> 234.56780
+
+jshell> boolean isValue =true
+isValue ==> true
+
+jshell> int i =10
+i ==> 10
+
+jshell> i>=15&&i<=25
+$37 ==> false
+
+jshell> false||true
+$38 ==> true
+
+jshell> !false
+$39 ==> true
+
+jshell> false ^true
+$40 ==> true
+
+jshell> i
+i ==> 10
+
+jshell> j
+j ==> 10
+
+jshell> j =15
+j ==> 15
+
+jshell>
+
+jshell> i>15 && j<10
+$44 ==> false
+
+jshell> i>15 & j<10
+$45 ==> false
+
+jshell> char c ='a'
+c ==> 'a'
+
+jshell> char ch ='\u0022'
+ch ==> '"'
+
+jshell> char ch ='\u00a2'
+ch ==> '¢'
+
+jshell> char num ='5'
+num ==> '5'
+
+jshell> char num =5
+num ==> '\005'
+
+jshell> char num =65
+num ==> 'A'
+
+jshell> num++
+$52 ==> 'A'
+
+jshell> num
+num ==> 'B'
