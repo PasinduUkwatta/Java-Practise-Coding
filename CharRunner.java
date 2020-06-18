@@ -1,10 +1,14 @@
 public class CharRunner {
+    
     public static void main(String[] args) {
         MyChar ch = new MyChar('A');
         System.out.println(ch.isVowel());
         System.out.println(ch.isConsonant());
         System.out.println(ch.isDigit());
         System.out.println(ch.isAlphabet());
+        MyChar.printLowerCaseAlphabet();
+        MyChar.printUpperCaseAlphabet();
+        
 
     }
     
@@ -17,6 +21,18 @@ class MyChar {
 
     public MyChar(char ch) {
         this.ch = ch;
+    }
+
+    public static void printLowerCaseAlphabet() {
+        for(char i='a';i<='z';i++){
+            System.out.println(i);
+        }
+    }
+
+    public static void printUpperCaseAlphabet() {
+        for(char i='A';i<='Z';i++){
+            System.out.println(i);
+        }
     }
 
 
