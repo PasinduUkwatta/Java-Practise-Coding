@@ -4,7 +4,9 @@ public class IsPrime {
     public static void main(String[] args) {
         IsPrime num = new IsPrime();
         num.isPrimeNumber(8);
-        num.sumUpToNum(9);
+
+        int total=num.sumNum(7);
+        System.out.println(total);
         num.printTheTriangle(8);
 
     }
@@ -19,15 +21,13 @@ public class IsPrime {
 
     }
 
-    public void sumUpToNum(int num) {
-
-
-        for (int i = 1; i <= num; i++) {
-
-
+   public int sumNum(int num){
+        int sum=0;
+        for (int i =0;i<=num;i++){
+            sum = sum+i;
 
         }
-
+       return sum;
     }
 
     private void isPrimeNumber(int num) {
