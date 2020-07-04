@@ -1,0 +1,158 @@
+
+
+jshell> int i =10
+i ==> 10
+
+jshell> i
+i ==> 10
+
+
+
+jshell> class Planet{}
+|  created class Planet
+
+jshell> Planet Jp =new Planet();
+Jp ==> Planet@51081592
+
+jshell> Jp
+Jp ==> Planet@51081592
+
+jshell> Planet earth = new Planet();
+earth ==> Planet@62ee68d8
+
+jshell>  earth
+earth ==> Planet@62ee68d8
+
+jshell> "test".length()
+$8 ==> 4
+
+jshell> String str = "Test";
+str ==> "Test"
+
+jshell> str.length();
+$10 ==> 4
+
+
+
+jshell> str.charAt(1)
+$11 ==> 'e'
+
+jshell> String str1 = "Test is a sentence ";
+str1 ==> "Test is a sentence "
+
+
+jshell> str1.charAt(12)
+$14 ==> 'n'
+
+
+jshell> str1.substring(12)
+$15 ==> "ntence "
+
+jshell> str1.substring(8,14)
+$16 ==> "a sent"
+
+jshell> String SomeString = "this is a lot of text again";
+SomeString ==> "this is a lot of text again"
+
+
+jshell> SomeString.length();
+$18 ==> 27
+           
+
+jshell> for(int i = 0 ; i<=SomeString.length();i++){
+   ...> System.out.println(SomeString.charAt(i));
+   ...> }
+t
+h
+i
+s
+
+i
+s
+
+a
+
+l
+o
+t
+
+o
+f
+
+t
+e
+x
+t
+
+a
+g
+a
+i
+n
+|  Exception java.lang.StringIndexOutOfBoundsException: String index out of range: 27
+|        at StringLatin1.charAt (StringLatin1.java:47)
+|        at String.charAt (String.java:693)
+|        at (#19:2)
+
+jshell> for(int i = 0 ; i<=SomeString.length()-1;i++){
+   ...> System.out.println(SomeString.charAt(i));
+   ...> }
+t
+h
+i
+s
+
+i
+s
+
+a
+
+l
+o
+t
+
+o
+f
+
+t
+e
+x
+t
+
+a
+g
+a
+i
+n
+
+
+
+jshell> SomeString.indexOf("l")
+$22 ==> 10
+
+
+jshell> SomeString.lastIndexOf('a')
+$23 ==> 24
+
+
+jshell> SomeString.endsWith("a")
+$24 ==> false
+
+jshell> SomeString.isEmpty()
+$25 ==> false
+
+jshell>
+
+jshell> String str = "Pasindu"
+str ==> "Pasindu"
+
+jshell> str.concat(" Thiwanka")
+$27 ==> "Pasindu Thiwanka"
+
+jshell> str
+str ==> "Pasindu"
+
+jshell> SomeString.charAt("l")
+
+
+
