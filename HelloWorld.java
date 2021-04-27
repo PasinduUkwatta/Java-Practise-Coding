@@ -10,5 +10,9 @@ public class HelloWorld {
             j++;
         }
 
+        for (int x =0;x<20;x++){
+            System.out.println(x*3);
+        }
+
     }
 }
