@@ -1,18 +1,17 @@
 public class HelloWorld {
-    public static void main(String [] args){
-        System.out.println("Hello World");
-        for(int i=0;i<10;i++){
-            System.out.println(i);
-        }
-        int j =10;
-        while(j<20){
-            System.out.println(j*2);
-            j++;
-        }
 
-        for (int x =0;x<20;x++){
-            System.out.println(x*3);
-        }
+    public static void main(String[] args){
+        System.out.println("Hello Pasindu");
 
+        int myFirstNumber =5+(3*6);
+        int mySecondNumber =12;
+        int myThirdNumber =myFirstNumber*2;
+        int myTotal =myFirstNumber+mySecondNumber+myThirdNumber;
+        int myLastNumber =1000-myTotal;
+
+        System.out.println(myFirstNumber);
+        System.out.println(myTotal);
+        System.out.println(myLastNumber);
     }
-}
+    }
+
