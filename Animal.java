@@ -1,32 +1,45 @@
+package com.company;
+
 public class Animal {
-    String name;
-    int weight;
-    String colour;
-    static int noOfLegs = 4;
+    private String name;
+    private int brain;
+    private int body;
+    private int size;
+    private int weight;
 
-    Animal(String name,int weight,String colour){
-        this.name =name;
-        this.weight =weight;
-        this.colour =colour;
+    public Animal(String name, int brain, int body, int size, int weight) {
+        this.name = name;
+        this.brain = brain;
+        this.body = body;
+        this.size = size;
+        this.weight = weight;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getBrain() {
+        return brain;
+    }
+
+    public int getBody() {
+        return body;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int getWeight() {
+        return weight;
     }
 
     public void eat(){
-        System.out.println("name of the animal is :"+name);
-        System.out.println("weight of the animal is :"+weight);
-        System.out.println("colur of the animal is :"+colour);
-        System.out.println("no of legs of the animal is :"+noOfLegs);
-        System.out.println(name+" is eating");
-        System.out.println(" ");
+        System.out.println("Animal eat method called");
     }
 
-    public static void main(String[] args) {
-        Animal a1 =new Animal("lion",50,"yellow");
-        Animal a2 =new Animal("dog",20,"black");
-        Animal a3 =new Animal("cat",10,"white");
-
-        a1.eat();
-        a2.eat();
-        a3.eat();
+    public void move(int speed){
+        System.out.println("Animal moving at speed :"+speed);
     }
 }
