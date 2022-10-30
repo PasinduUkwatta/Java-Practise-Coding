@@ -4,13 +4,23 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Animal animal =new Animal("Animal",1,1,5,5);
-        Dog dog =new Dog("Sheerry",8,25,2,4,1,32,"Silk");
-        Fish fish =new Fish("Gold Fish",1,1,10,30,1,2,1);
-        dog.eat();
-        dog.walk();
-        dog.run();
-        fish.move(10);
-        fish.swim();
+        Car porsche =new Car();
+        Car holden =new Car();
+        BankAccount account =new BankAccount(132412,234535,"Pasindu","pasindu@gmail.com",0723452345);
+        VIPCustomer customer1 =new VIPCustomer("Deshan",200.00);
+        VIPCustomer customer2 =new VIPCustomer();
+
+        porsche.setModel("Carrera");
+
+        account.deposit(1000);
+        account.withdraw(500);
+        account.withdraw(1500);
+
+        System.out.println(account);
+        System.out.println(customer1.getCreditLimit());
+        System.out.println(customer1.getName());
+        System.out.println(customer2.getName());
+
+        System.out.println(porsche.getModel());
     }
 }
