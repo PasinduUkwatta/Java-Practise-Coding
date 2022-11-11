@@ -3,104 +3,82 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
+    private static Scanner scanner =new Scanner(System.in);
+    private static MobilePhone mobilePhone =new MobilePhone("0711134022");
+
 
     public static void main(String[] args) {
-	// write your code hereS
-        String parsingString ="2022";
-        System.out.println(parsingString);
+	// write your code here
 
-        int number =Integer.parseInt(parsingString);
-        System.out.println(number);
+        boolean quit =false;
+        startPhone();
+        printActions();
+        while (!quit){
 
-//        Scanner scanner =new Scanner(System.in);
-//        System.out.println("Enter Your Name :");
-//        String name =scanner.nextLine();
-//        System.out.println("Enter Your Year of Birth :");
-//
-//        boolean hasNextInt =scanner.hasNextInt();
-//
-//
-//        if(hasNextInt){
-//            int year =scanner.nextInt();
-//            int age =2022 -year;
-//            System.out.println("Your Name is :"+name);
-//            System.out.println(age);
-//            System.out.println(year);
-//
-//            if((year>=0) && (year<=100)){
-//                System.out.println("Your Age is :"+year);
-//
-//            }
-//            else {
-//                System.out.println("Invalid Age");
-//            }
-//        }
-//        else {
-//            System.out.println("Wrong Age Type");
-//        }
-//
-//        scanner.close();
-//        ReadingUserInput();
-        MinMaxSearch();
+            System.out.println("\n Enter Action :()");
+            int action =scanner.nextInt();
+            scanner.nextLine();
 
-    }
+            switch (action){
+                case 0:
+                    System.out.println("\n Shutting down");
+                    quit=true;
+                    break;
+                case 1:
+                    mobilePhone.printContacts();
+                    break;
 
-    public static void ReadingUserInput(){
-        int counter =0;
-        int sum =0;
-        Scanner scanner =new Scanner(System.in);
+                case 2:
+                    addNewContact();
+                    break;
+                case 4:
+                    updateContact();
+                    break;
+                case 5:
+                    queryContact();
+                    break;
+                case 6:
+                    printActions();
+                    break;
 
 
 
-        while (counter<10){
-            System.out.println("Enter Your Number "+(counter+1)+" :");
-
-            boolean hasNextInt =scanner.hasNextInt();
-            int number =scanner.nextInt();
-
-
-            if(hasNextInt){
-
-                sum=sum+number;
-                counter++;
             }
-            else {
-                System.out.println("Please Enter Valid Number");
-            }
-
-        }
-        scanner.close();
-
-        System.out.println("Total of the Number :"+sum);
-
-    }
-
-    public static void MinMaxSearch(){
-        while (true){
-            Scanner scanner =new Scanner(System.in);
-            System.out.println("Enter Your Number");
-
-            int minValue =0;
-            int maxValue =0;
-
-            boolean hasNextInt = scanner.hasNextInt();
-            int enteredValue= scanner.nextInt();
-
-            if (hasNextInt){
-                if(enteredValue>maxValue ){
-                    maxValue=enteredValue;
-
-                }
-                if(enteredValue<minValue){
-                    maxValue=enteredValue;
-                }
-            }
-            else {
-                break;
-            }
-
-            System.out.println("Min Value :"+minValue);
-            System.out.println("Max Value :"+maxValue);
         }
     }
+
+  private static void addNewContact(){
+      System.out.println("Enter New Name :");
+      String name =scanner.nextLine();
+      System.out.println("Enter Phone Number :");
+      String phone =scanner.nextLine();
+      Contact newContact =Contact.createContact(name,phone);
+
+      if(mobilePhone.addNewContact(newContact)){
+          System.out.println("New contact added  :"+name +"  phone :" +phone);
+      }else {
+          System.out.println("Cannot add the details");
+      }
+  }
+
+    private static void startPhone(){
+        System.out.println("Phone is starting ..");
+    }
+
+
+
+    private static void printActions(){
+        System.out.println("\n Available Actions :\npress");
+        System.out.println("0 -shutdown\n"+
+                "1 -print contacts\n"+
+                "2 -add new contact\n"+
+                "3 -update exisiting contact\n"+
+                "4 -remove exisiting contact\n"+
+                "5 -query exisiting conatct\n"+
+                "6 -list of availabel actions");
+
+        System.out.println("Choose your action :");
+
+    }
+
 }
