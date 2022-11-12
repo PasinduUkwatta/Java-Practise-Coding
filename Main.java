@@ -65,6 +65,60 @@ public class Main {
         System.out.println("Phone is starting ..");
     }
 
+    private static void updateContact(){
+        System.out.println("Enter exisiting conatct ..");
+        String name =scanner.nextLine();
+       Contact exisitingContactRecord= mobilePhone.queryContact(name);
+       if(exisitingContactRecord==null){
+           System.out.println("Contact not Found");
+           return;
+       }
+        System.out.println("Enter new conatct Name :");
+       String newName =scanner.nextLine();
+        System.out.println("Enter New contact number :");
+        String newNumber =scanner.nextLine();
+        Contact newContact =Contact.createContact(newName,newNumber);
+        if(mobilePhone.updateContact(exisitingContactRecord,newContact)){
+            System.out.println("Sucessfully updated record");
+        }else {
+            System.out.println("Error in update");
+        }
+
+    }
+
+
+private static void removeContact(){
+    System.out.println("Enter exisiting name:");
+    String name =scanner.nextLine();
+    Contact exisitingContactRecord =mobilePhone.queryContact(name);
+    if(exisitingContactRecord==null){
+        System.out.println("Conatct not found");
+        return;
+    }
+
+   if( mobilePhone.removeContact(exisitingContactRecord)){
+       System.out.println("Sucesfully deleted");
+   }else {
+       System.out.println("Error deleting contact");
+   }
+}
+
+    private static void queryContact(){
+        System.out.println("Enter exisiting name:");
+        String name =scanner.nextLine();
+        Contact exisitingContactRecord =mobilePhone.queryContact(name);
+        if(exisitingContactRecord==null){
+            System.out.println("Conatct not found");
+            return;
+        }
+        System.out.println("Name :"+exisitingContactRecord.getName() + " phone number " +exisitingContactRecord.getPhoneNumber());
+
+        if( mobilePhone.removeContact(exisitingContactRecord)){
+            System.out.println("Sucesfully deleted");
+        }else {
+            System.out.println("Error deleting contact");
+        }
+    }
 
 
     private static void printActions(){
