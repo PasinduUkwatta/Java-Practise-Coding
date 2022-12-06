@@ -1,12 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-            String privateVar ="this is private main ()";
+        Account timesAccount =new Account("Tim");
+        timesAccount.deposit(1000);
+        timesAccount.withdraw(500);
+        timesAccount.withdraw(-200);
+        timesAccount.deposit(-40);
+        timesAccount.calculateBalance();
 
-            ScopeCheck scopeInstance =new ScopeCheck();
-        System.out.println("Scope instance privatevar is  :"+scopeInstance.getPrivateVar());
-        System.out.println(privateVar);
-
-        scopeInstance.timesTwo();
+        System.out.println("Balnce on account is "+timesAccount.getBalance());
 
     }
 }
