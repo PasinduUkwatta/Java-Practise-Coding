@@ -1,33 +1,23 @@
-package com.company;
+public class Dog {
+    private final String name;
 
-public class Dog extends Animal{
-    private int eyes;
-    private int legs;
-    private int tail;
-    private int teeth;
-    private String coat;
+    public Dog(String name) {
+        this.name = name;
+    }
 
-    public Dog(String name, int size, int weight,int eyes,int legs,int tail,int teeth,String coat) {
-        super(name, 1, 1, size, weight);
-        this.eyes=eyes;
-        this.legs=legs;
-        this.tail=tail;
-        this.teeth=teeth;
-        this.coat=coat;
+    public String getName() {
+        return name;
     }
 
     @Override
-    public void eat() {
-//        super.eat();
-        System.out.println("Dog eat method called");
+    public final boolean equals(Object obj) {
+        if(this==obj){
+            return true;
+        }
+        if(obj instanceof Dog){
+            String objName =((Dog)obj).getName();
+            return this.name.equals(objName);
+        }
+        return false;
     }
-
-    public void walk(){
-        System.out.println("Dog walk");
-        move(5);
-    };
-    public void run(){
-        System.out.println("Dog run");
-       move(10);
-    };
 }
