@@ -1,49 +1,33 @@
-import java.util.*;
-
-public class Main {
-
-    private static Map<String, HeavenlyBody> solarSystem =new HashMap<>();
-    private static Set<HeavenlyBody> planets =new HashSet<>();
-    public static void main(String[] args) {
-
-    HeavenlyBody temp =new HeavenlyBody("Mercury",88);
-    solarSystem.put(temp.getName(),temp);
-    planets.add(temp);
-
-        temp =new HeavenlyBody("Venus",225);
-        solarSystem.put(temp.getName(),temp);
-        planets.add(temp);
-
-        temp =new HeavenlyBody("earth",365);
-        solarSystem.put(temp.getName(),temp);
-        planets.add(temp);
-
-        HeavenlyBody tempMoon =new HeavenlyBody("Moon",27);
-        solarSystem.put(tempMoon.getName(),tempMoon);
-        temp.addMoon(tempMoon);
-
-        System.out.println("planets");
-        for(HeavenlyBody planet :planets){
-            System.out.println("\t"+planet.getName());
-        }
-
-        HeavenlyBody body =solarSystem.get("Mercury");
-        System.out.println("Moons of " +body.getName());
-        for (HeavenlyBody jupiterMoon : body.getSatellites()){
-            System.out.println("/t" +jupiterMoon.getName());
-        }
-
-        HeavenlyBody pluto =new HeavenlyBody("Pluto",842);
-        planets.add(pluto);
-
-        for(HeavenlyBody planet :planets){
-            System.out.println(planet.getName()+" :" +planet.getOrbitialPeriod()) ;
-        }
-
-        Object o =new Object();
-        o.equals(o);
-        "pluto".equals("pluto");
-
-
-    }
-}
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//
+//public class Main {
+//    public static void main(String[] args) {
+//
+//        Theater theater = new Theater("Olympian", 8, 12);
+////        theater.getSeats();
+////        if(theater.reserveSeat("H11")){
+////            System.out.println("Please pay");
+////        }else {
+////            System.out.println("Sorry seat is taken !");
+////        }
+//
+//        List<Theater.Seat> seatCopy = new ArrayList<>(theater.seats);
+//        public static void printList printList(seatCopy);
+//        seatCopy.get(1).reserve();
+//        if (theater.reserveSeat("A02")) {
+//            System.out.println("Please pay for QA2");
+//        } else {
+//            System.out.println("Seat already booked");
+//        }
+//
+//        (List < Theater.Seat > list) {
+//            for (Theater.Seat seat : list) {
+//                System.out.println(" " + seat.getSeatNumber());
+//            }
+//
+//            System.out.println();
+//        }
+//    }
+//}
