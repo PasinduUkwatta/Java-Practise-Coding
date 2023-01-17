@@ -1,4 +1,4 @@
-package com.example.javafxapplication;
+package com.example.gridpanelayout;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
