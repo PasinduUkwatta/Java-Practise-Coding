@@ -1,49 +1,25 @@
-import java.util.*;
-
 public class Main {
-
-    private static Map<String, HeavenlyBody> solarSystem =new HashMap<>();
-    private static Set<HeavenlyBody> planets =new HashSet<>();
     public static void main(String[] args) {
+        int x =98;
+        int y=0;
 
-    HeavenlyBody temp =new HeavenlyBody("Mercury",88);
-    solarSystem.put(temp.getName(),temp);
-    planets.add(temp);
+        System.out.println(divideLBYL(x,y));
+        System.out.println(divideEAFP(x,y));
+    }
 
-        temp =new HeavenlyBody("Venus",225);
-        solarSystem.put(temp.getName(),temp);
-        planets.add(temp);
-
-        temp =new HeavenlyBody("earth",365);
-        solarSystem.put(temp.getName(),temp);
-        planets.add(temp);
-
-        HeavenlyBody tempMoon =new HeavenlyBody("Moon",27);
-        solarSystem.put(tempMoon.getName(),tempMoon);
-        temp.addSatellite(tempMoon);
-
-        System.out.println("planets");
-        for(HeavenlyBody planet :planets){
-            System.out.println("\t"+planet.getName());
+    private static int divideLBYL(int x,int y){
+        if (y != 0) {
+            return x/y;
+        }else {
+            return 0;
         }
+    }
 
-        HeavenlyBody body =solarSystem.get("Mercury");
-        System.out.println("Moons of " +body.getName());
-        for (HeavenlyBody jupiterMoon : body.getSatellites()){
-            System.out.println("/t" +jupiterMoon.getName());
+    private static int divideEAFP(int x,int y){
+        try {
+            return  x/y;
+        }catch (ArithmeticException e){
+            return 0;
         }
-
-        HeavenlyBody pluto =new HeavenlyBody("Pluto",842);
-        planets.add(pluto);
-
-        for(HeavenlyBody planet :planets){
-            System.out.println(planet.getName()+" :" +planet.getOrbitialPeriod()) ;
-        }
-
-        Object o =new Object();
-        o.equals(o);
-        "pluto".equals("pluto");
-
-
     }
 }
