@@ -1,98 +1,50 @@
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReentrantLock;
 
-
 public class Main {
-    public static final String EOF ="EOF";
-    public static void main(String[] args) {
-        ArrayBlockingQueue<> buffer =new ArrayBlockingQueue<>();
-        ReentrantLock bufferLock =new ReentrantLock();
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
-        MyProducer producer =new MyProducer(buffer,ThreadColor.ANSI_CYAN);
-        MyConsumer consumer1 =new MyConsumer(buffer,ThreadColor.ANSI_PURPLE);
-        MyConsumer consumer2 =new MyConsumer(buffer,ThreadColor.ANSI_GREEN);
 
-      executorService.execute(producer);
-      executorService.execute(consumer1);
-      executorService.execute(consumer2);
+    private static ReentrantLock lock = new ReentrantLock();
+    public static void main(String[] args)
+    {
+        Thread t1 =new Thread(new Worker(ThreadColor.ANSI_RED),"Priority 10");
+        Thread t2 =new Thread(new Worker(ThreadColor.ANSI_BLUE),"Priority 8");
+        Thread t3 =new Thread(new Worker(ThreadColor.ANSI_GREEN),"Priority 6");
+        Thread t4 =new Thread(new Worker(ThreadColor.ANSI_CYAN),"Priority 4");
+        Thread t5 =new Thread(new Worker(ThreadColor.ANSI_PURPLE),"Priority 2");
 
-      executorService.shutdown();
-    }
-}
+        t1.setPriority(10);
+        t2.setPriority(8);
+        t3.setPriority(6);
+        t4.setPriority(4);
+        t5.setPriority(2);
 
-class MyProducer implements Runnable{
-
-    private ArrayBlockingQueue<String> buffer;
-    private String color;
-
-    public MyProducer(ArrayBlockingQueue buffer, String color) {
-        this.buffer = buffer;
-        this.color=color;
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+        t5.start();
     }
 
-    @Override
-    public void run() {
-        Random random =new Random();
-        String [] nums ={"1","2","3","4","5"};
-        for (String num:nums){
-            try {
-                System.out.println(color+"Adding ..."+num);
-                buffer.put(num);
-                Thread.sleep(random.nextInt(1000));
+    private static class Worker implements Runnable{
+        private int runCount =1;
+        private String threadColor ;
 
-            }catch (InterruptedException e){
-                System.out.println("Producer was interuppted");
+        public Worker( String threadColor) {
+            this.threadColor = threadColor;
+        }
+
+        @Override
+        public void run() {
+            for(int i =0;i<5;i++){
+                lock.lock();
+                try {
+                    System.out.format(threadColor+" %s:runCount = %d\n",Thread.currentThread().getName(),runCount++);
+
+                }finally {
+                    lock.unlock();
+                }
             }
         }
-
-        System.out.println(color +" Adding EOF and exit..");
-        try {
-            buffer.put("EOF");
-
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        } finally {
-
-        }
-
-    }
-}
-
-class MyConsumer implements Runnable{
-
-    private ArrayBlockingQueue buffer;
-    private String color;
-
-    public MyConsumer(ArrayBlockingQueue buffer, String color) {
-        this.buffer = buffer;
-        this.color=color;
     }
 
-    @Override
-    public void run() {
-    while (true){
-        synchronized (buffer){
-            try {
 
-                if(buffer.isEmpty()){
-                    continue;
-                }
-                if(buffer.peek().equals("EOF")){
-                    System.out.println(color +"Exiting");
-                    break;
-                }else {
-                    System.out.println(color+ "Removed " +buffer.remove(0));
-                }
-            }finally {
-
-            }
-        }
-
-
-    }
-    }
 }
