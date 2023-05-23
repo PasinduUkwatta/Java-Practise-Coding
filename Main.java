@@ -1,50 +1,59 @@
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class Main {
+    public static void main(String[] args) {
+new Thread(()-> System.out.println("Printing from the runnable.start()")).start();
 
-    private static ReentrantLock lock = new ReentrantLock();
-    public static void main(String[] args)
-    {
-        Thread t1 =new Thread(new Worker(ThreadColor.ANSI_RED),"Priority 10");
-        Thread t2 =new Thread(new Worker(ThreadColor.ANSI_BLUE),"Priority 8");
-        Thread t3 =new Thread(new Worker(ThreadColor.ANSI_GREEN),"Priority 6");
-        Thread t4 =new Thread(new Worker(ThreadColor.ANSI_CYAN),"Priority 4");
-        Thread t5 =new Thread(new Worker(ThreadColor.ANSI_PURPLE),"Priority 2");
+Employee john =new Employee("John Doe",30);
+Employee tim =new Employee("Tim buchalka",21);
+Employee jack =new Employee("jsack  huye",22);
 
-        t1.setPriority(10);
-        t2.setPriority(8);
-        t3.setPriority(6);
-        t4.setPriority(4);
-        t5.setPriority(2);
+        List<Employee> employees=new ArrayList<>();
+        employees.add(john);
+        employees.add(tim);
+        employees.add(jack);
 
-        t1.start();
-        t2.start();
-        t3.start();
-        t4.start();
-        t5.start();
-    }
+//        Collections.sort(employees, new Comparator<Employee>() {
+//            @Override
+//            public int compare(Employee employee1, Employee employee2) {
+//                return employee1.getName().compareTo(employee2.getName());
+//            }
+//        });
 
-    private static class Worker implements Runnable{
-        private int runCount =1;
-        private String threadColor ;
+        Collections.sort(employees,(Employee employee1,Employee employee2)->
+                employee1.getName().compareTo(employee2.getName()));
 
-        public Worker( String threadColor) {
-            this.threadColor = threadColor;
-        }
-
-        @Override
-        public void run() {
-            for(int i =0;i<5;i++){
-                lock.lock();
-                try {
-                    System.out.format(threadColor+" %s:runCount = %d\n",Thread.currentThread().getName(),runCount++);
-
-                }finally {
-                    lock.unlock();
-                }
-            }
+        for(Employee employee :employees){
+            System.out.println(employee.getName());
         }
     }
+}
 
+class Employee{
+    private String name;
+    private int age;
 
+    public Employee(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 }
