@@ -9,7 +9,7 @@ new Thread(()-> System.out.println("Printing from the runnable.start()")).start(
 
 Employee john =new Employee("John Doe",30);
 Employee tim =new Employee("Tim buchalka",21);
-Employee jack =new Employee("jsack  huye",22);
+Employee jack =new Employee("Jack huye",22);
 
         List<Employee> employees=new ArrayList<>();
         employees.add(john);
