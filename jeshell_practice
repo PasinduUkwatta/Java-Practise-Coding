@@ -1,0 +1,264 @@
+Microsoft Windows [Version 10.0.21996.1]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Acer>jshell
+|  Welcome to JShell -- Version 16.0.1
+|  For an introduction type: /help intro
+
+jshell> int num =5
+num ==> 5
+
+jshell> num=num+2
+num ==> 7
+
+jshell> number++
+|  Error:
+|  cannot find symbol
+|    symbol:   variable number
+|  number++
+|  ^----^
+
+jshell> num++
+$3 ==> 7
+
+jshell> num
+num ==> 8
+
+jshell> ++num
+$5 ==> 9
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell> cls
+|  Error:
+|  cannot find symbol
+|    symbol:   variable cls
+|  cls
+|  ^-^
+
+jshell> ++num
+$6 ==> 10
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell> num
+|  Error:
+|  cannot find symbol
+|    symbol:   variable m
+|  m
+|  ^
+
+jshell> num++
+$7 ==> 10
+
+jshell> System.out.println(%d * %d = %d,5,i,5*i);
+|  Error:
+|  illegal start of expression
+|  System.out.println(%d * %d = %d,5,i,5*i);
+|                     ^
+|  Error:
+|  illegal start of expression
+|  System.out.println(%d * %d = %d,5,i,5*i);
+|                          ^
+|  Error:
+|  illegal start of expression
+|  System.out.println(%d * %d = %d,5,i,5*i);
+|                               ^
+
+jshell> System.out.println("%d * %d = %d",5,i,5*i);
+|  Error:
+|  cannot find symbol
+|    symbol:   variable i
+|  System.out.println("%d * %d = %d",5,i,5*i);
+|                                      ^
+|  Error:
+|  cannot find symbol
+|    symbol:   variable i
+|  System.out.println("%d * %d = %d",5,i,5*i);
+|                                          ^
+
+jshell> for(int i=0;i<10;i++){
+   ...>
+   ...> }
+
+jshell> for(int i =0 ;i<10;i++){System.out.println("%d * %d = %d",5,i,5*i);}
+|  Error:
+|  no suitable method found for println(java.lang.String,int,int,int)
+|      method java.io.PrintStream.println() is not applicable
+|        (actual and formal argument lists differ in length)
+|      method java.io.PrintStream.println(boolean) is not applicable
+|        (actual and formal argument lists differ in length)
+|      method java.io.PrintStream.println(char) is not applicable
+|        (actual and formal argument lists differ in length)
+|      method java.io.PrintStream.println(int) is not applicable
+|        (actual and formal argument lists differ in length)
+|      method java.io.PrintStream.println(long) is not applicable
+|        (actual and formal argument lists differ in length)
+|      method java.io.PrintStream.println(float) is not applicable
+|        (actual and formal argument lists differ in length)
+|      method java.io.PrintStream.println(double) is not applicable
+|        (actual and formal argument lists differ in length)
+|      method java.io.PrintStream.println(char[]) is not applicable
+|        (actual and formal argument lists differ in length)
+|      method java.io.PrintStream.println(java.lang.String) is not applicable
+|        (actual and formal argument lists differ in length)
+|      method java.io.PrintStream.println(java.lang.Object) is not applicable
+|        (actual and formal argument lists differ in length)
+|  for(int i =0 ;i<10;i++){System.out.println("%d * %d = %d",5,i,5*i);}
+|                          ^----------------^
+
+jshell> for(int i =0 ;i<10;i++){System.out.printf("%d * %d = %d",5,i,5*i).println();}
+5 * 0 = 0
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+
+jshell> for(int i =1 ;i<10;i++){System.out.printf("%d * %d = %d",5,i,5*i).println();}
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+
+jshell> for(int i =1 ;i<=10;i++){System.out.printf("%d * %d = %d",5,i,5*i).println();}
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+
+jshell> int a=5
+a ==> 5
+
+jshell> int b=8
+b ==> 8
+
+jshell> int c=3
+c ==> 3
+
+jshell> int d=9
+d ==> 9
+
+jshell> if((a+b)>(c+d)){
+   ...>     System.out.printf("a+b greater than c+d").println();
+   ...> }
+a+b greater than c+d
+
+jshell> int angle1 =45
+angle1 ==> 45
+
+jshell> int angle2 =110
+angle2 ==> 110
+
+jshell> int angle3 =35
+angle3 ==> 35
+
+jshell> if((angle1+angle2+angle3)=180){
+   ...>     Sytem.out.printf("can create triangle").println();
+   ...> }
+|  Error:
+|  unexpected type
+|    required: variable
+|    found:    value
+|  if((angle1+angle2+angle3)=180){
+|      ^------------------^
+|  Error:
+|  package Sytem does not exist
+|      Sytem.out.printf("can create triangle").println();
+|      ^-------^
+
+jshell> if((angle1+angle2+angle3)=180){
+   ...>     System.out.printf("can create triangle").println();
+   ...> }
+|  Error:
+|  unexpected type
+|    required: variable
+|    found:    value
+|  if((angle1+angle2+angle3)=180){
+|      ^------------------^
+
+jshell> angle1+angle2+angle3
+$20 ==> 190
+
+jshell> if((angle1+angle2+angle3)=180){
+   ...>     System.out.printf("can create triangle").println();
+   ...> }
+|  Error:
+|  unexpected type
+|    required: variable
+|    found:    value
+|  if((angle1+angle2+angle3)=180){
+|      ^------------------^
+
+jshell> int number =9
+number ==> 9
+
+jshell> ){
+   ...>     Sytem.out
+|  Error:
+|  illegal start of expression
+|  ){
+|  ^
+
+jshell> if((angle1+angle2+angle3)==180){
+   ...>     System.out.printf("can create triangle").println();
+   ...> }
+
+jshell>
+
+jshell> if((angle1+angle2+angle3)==180){
+   ...>     System.out.printf("can create triangle").println();
+   ...> }
+
+jshell> if((angle1+angle2+angle3-10)==180){
+   ...>     System.out.printf("can create triangle").println();
+   ...> }
+can create triangle
+
+jshell> int number =9
+number ==> 9
+
+jshell> if(number%2 ==1){
+   ...>     System.out.printf("odd number").println();
+   ...> }else{
+   ...>     System.out.printf("even number").println();}
+odd number
+
+jshell> number=8
+number ==> 8
+
+jshell> if(number%2 ==1){
+   ...>     System.out.printf("odd number").println();
+   ...> }else{
+   ...>     System.out.printf("even number").println();}
+even number
+
+jshell>
+
