@@ -1,0 +1,137 @@
+jshell> ^Vq
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell> cls
+|  Error:
+|  cannot find symbol
+|    symbol:   variable cls
+|  cls
+|  ^-^
+
+jshell> for(int i=10;i<10;i--){
+   ...>     System.out.println(i);}
+
+jshell> for(int i=10;i=<0;i--){
+   ...>     System.out.println(i);}
+|  Error:
+|  illegal start of type
+|  for(int i=10;i=<0;i--){
+|                  ^
+|  Error:
+|  ')' expected
+|  for(int i=10;i=<0;i--){
+|                   ^
+
+jshell> for(int i=10;i<=0;i--){
+   ...>     System.out.println(i);}
+
+jshell> for(int i=10;i>=0;i--){
+   ...>     System.out.println(i);}
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+
+jshell> for(int i=1;i<=10;i++){
+   ...>     System.out.println(i*i);}
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+jshell> for(int i=1;i<=10;i++){
+   ...>     System.out.println(i*i);}
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+jshell> printMultiplicationTable(int number){
+   ...>     for(int i=1;i<=10,i++){
+   ...>     System.out.printf("%d  *%d  = %d",number,i,number*i);}
+   ...> };
+|  Error:
+|  '.class' expected
+|  printMultiplicationTable(int number){
+|                               ^
+
+jshell> void printMultiplicationTable(int number){
+   ...>     for(int i=1;i<=10,i++){
+   ...>     System.out.printf("%d  *%d  = %d",number,i,number*i);}
+   ...> };
+|  Error:
+|  ';' expected
+|      for(int i=1;i<=10,i++){
+|                       ^
+
+jshell> void printMultiplicationTable(int number){
+   ...>     for(int i=1;i<=10;i++){
+   ...>     System.out.printf("%d  *%d  = %d",number,i,number*i);}
+   ...> };
+|  created method printMultiplicationTable(int)
+
+jshell> printMultiplicationTable(8)
+8  *1  = 88  *2  = 168  *3  = 248  *4  = 328  *5  = 408  *6  = 488  *7  = 568  *8  = 648  *9  = 728  *10  = 80
+jshell> void printMultiplicationTable(int number){
+   ...>     for(int i=1;i<=10;i++){
+   ...>     System.out.printf("%d  *%d  = %d",number,i,number*i).println();}
+   ...> };
+|  modified method printMultiplicationTable(int)
+
+jshell> printMultiplicationTable(8)
+8  *1  = 8
+8  *2  = 16
+8  *3  = 24
+8  *4  = 32
+8  *5  = 40
+8  *6  = 48
+8  *7  = 56
+8  *8  = 64
+8  *9  = 72
+8  *10  = 80
+
+jshell> printMultiplicationTable(12)
+12  *1  = 12
+12  *2  = 24
+12  *3  = 36
+12  *4  = 48
+12  *5  = 60
+12  *6  = 72
+12  *7  = 84
+12  *8  = 96
+12  *9  = 108
+12  *10  = 120
+
+jshell>
