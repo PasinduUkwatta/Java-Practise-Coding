@@ -1,24 +1,29 @@
+package org.example;
+
 public class MotorBikeRunner {
     public static void main(String[] args) {
-        MotorBike ducati = new MotorBike();
-        MotorBike honda = new MotorBike();
+        MotorBike ducati =new MotorBike();
+        MotorBike honda =new MotorBike();
 
         ducati.start();
+        ducati.setSpeed(100);
+        honda.setSpeed(80);
+
+        System.out.println(ducati.getSpeed());
+        System.out.println(honda.getSpeed());
+        honda.start();
         honda.start();
 
-        ducati.setSpeed(-100);
+        ducati.setSpeed(20);
+        honda.setSpeed(0);
+        ducati.increaseSpeeed(100);
+        honda.increaseSpeeed(75);
+
+        ducati.decreaseSpeeed(25);
+        honda.decreaseSpeeed(12);
+
+
         System.out.println(ducati.getSpeed());
-
-        honda.setSpeed(60);
         System.out.println(honda.getSpeed());
-
-        ducati.increaseSpeed(50);
-        honda.increaseSpeed(70);
-
-        ducati.decreaseSpeed(1000);
-        honda.decreaseSpeed(320);
-
     }
-
-
 }
