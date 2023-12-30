@@ -1,12 +1,16 @@
-package com.company;
+package org.example;
 
 public class Customer {
     private String name;
-    private double balance;
+    private Address homeAddress;
+    private Address workAddress;
 
-    public Customer(String name, double balance) {
+    public Customer() {
+    }
+
+    public Customer(String name, Address homeAddress) {
         this.name = name;
-        this.balance = balance;
+        this.homeAddress = homeAddress;
     }
 
     public String getName() {
@@ -17,11 +21,28 @@ public class Customer {
         this.name = name;
     }
 
-    public double getBalance() {
-        return balance;
+    public Address getHomeAddress() {
+        return homeAddress;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public void setHomeAddress(Address homeAddress) {
+        this.homeAddress = homeAddress;
+    }
+
+    public Address getWorkAddress() {
+        return workAddress;
+    }
+
+    public void setWorkAddress(Address workAddress) {
+        this.workAddress = workAddress;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", homeAddress=" + homeAddress.toString() +
+                ", workAddress=" + workAddress +
+                '}';
     }
 }

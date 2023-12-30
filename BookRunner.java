@@ -11,5 +11,10 @@ public class BookRunner {
         System.out.println(artOfComputing.getNoOfCopies());
         System.out.println(effectiveJava.getNoOfCopies());
         System.out.println(cleanCode.getNoOfCopies());
+
+        Book book =new Book(123,"Object oriented programming","ranga");
+        book.addReviews(new Review(10,"great book",5));
+        System.out.println(book.toString());
+
     }
 }
