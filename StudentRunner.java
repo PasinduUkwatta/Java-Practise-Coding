@@ -6,6 +6,18 @@ import java.util.List;
 public class StudentRunner {
     public static void main(String[] args) {
         Student student =new Student("Pasindu", new ArrayList<>(List.of(16, 22, 74, 85)));
+        Student student1 =new Student();
+        student1.setName("Thiwnaka");
+        student1.setEmail("painsuukwatta96@gmail.com");
+
+        System.out.println(student1.toString());
+        Employee employee =new Employee();
+        employee.setName("deshan");
+        employee.setSalary(10000);
+
+        System.out.println(employee);
+
+
 
         System.out.println(student.getNumberOfMarks());;
         System.out.println(student.getTotalSumOfMarks());;
