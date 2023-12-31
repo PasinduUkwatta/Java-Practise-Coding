@@ -5,21 +5,37 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Student {
-    private String name;
+public class Student extends Person {
+
+    private String college;
+    private int year;
+
     private ArrayList<Integer> listOfMarks= new ArrayList<Integer>();
 
     public Student(String name, ArrayList<Integer> listOfMarks) {
-        this.name = name;
+        this.setName(name);
         this.listOfMarks = listOfMarks;
     }
 
-    public String getName() {
-        return name;
+    public Student() {
+
     }
 
-    public void setName(String name) {
-        this.name = name;
+
+    public String getCollege() {
+        return college;
+    }
+
+    public void setCollege(String college) {
+        this.college = college;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public ArrayList<Integer> getListOfMarks() {
