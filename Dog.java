@@ -1,23 +1,8 @@
-public class Dog {
-    private final String name;
+package org.example;
 
-    public Dog(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
+public class Dog extends Animal{
     @Override
-    public final boolean equals(Object obj) {
-        if(this==obj){
-            return true;
-        }
-        if(obj instanceof Dog){
-            String objName =((Dog)obj).getName();
-            return this.name.equals(objName);
-        }
-        return false;
+    void bark() {
+        System.out.println("bow bow");
     }
 }
