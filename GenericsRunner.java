@@ -6,7 +6,7 @@ public class GenericsRunner {
 
         list.addElement("Element1");
         list.addElement("Element2");
-        String value = list.getElement(0);
+        String value = String.valueOf(list.getElement(String.valueOf(0)));
 
         MyCustomList<Integer> list2 =new MyCustomList<Integer>();
 
