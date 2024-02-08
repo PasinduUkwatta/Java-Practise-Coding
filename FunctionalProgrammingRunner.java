@@ -7,6 +7,9 @@ public class FunctionalProgrammingRunner {
         List<String> list = List.of("Apple","Banana","Cat","Dog");
         printBasicList(list);
         printBasicListFP(list);
+
+        list.forEach(System.out::println);
+        ;
     }
 
     static void printBasicList(List<String> list){
