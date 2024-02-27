@@ -4,6 +4,8 @@ import javax.xml.transform.sax.SAXResult;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Streams {
@@ -42,5 +44,45 @@ public class Streams {
                 .peek(System.out::println)
                 .count());
 
+        StreamEmployee john =new StreamEmployee("John doe",30);
+        StreamEmployee mark =new StreamEmployee("mark dear",25);
+        StreamEmployee kack =new StreamEmployee("kack when",32);
+        StreamEmployee snow =new StreamEmployee("snow white",23);
+
+        Department hr =new Department("Human Resourses");
+        hr.addEmployee(john);
+        hr.addEmployee(mark);
+        hr.addEmployee(kack);
+        hr.addEmployee(snow);
+
+
+        List<Department> departments =new ArrayList<>();
+        departments.add(hr);
+
+        System.out.println(departments);
+
+        departments.stream()
+                .flatMap(department -> department.getEmployee().stream())
+                .forEach(System.out::println);
+
+        List<String> sortedNumbers =someBingoNumbers
+                .stream()
+                .map(String::toUpperCase)
+                .filter(s->s.startsWith("G"))
+                .sorted()
+                .collect(ArrayList::new,ArrayList::add,ArrayList::addAll);
+
+        for (String s :sortedNumbers){
+            System.out.println(s);
+        }
+
+        Map<Integer,List<StreamEmployee>> groupByAge =departments.stream()
+                .flatMap(department -> department.getEmployee().stream())
+                .collect(Collectors.groupingBy(streamEmployee -> streamEmployee.getAge()));
+
+        departments.stream()
+                .flatMap(department -> department.getEmployee().stream())
+                .reduce((e1,e2)->e1.getAge()<e2.getAge()?e1:e2)
+                .ifPresent(System.out::println);
     }
 }
