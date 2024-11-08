@@ -1,5 +1,8 @@
 package com.aspectoriented.aspectoriented.dao;
 
+import com.aspectoriented.aspectoriented.Account;
+
 public interface AccountDAO {
-    void addAccount();
+    void addAccount(Account account,boolean vipFlag);
+    boolean doWork();
 }
